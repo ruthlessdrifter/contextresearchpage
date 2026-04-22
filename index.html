@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Context Research — Benchmarks and leaderboards for evaluating how well AI models understand and manage context. By Tencent Hunyuan Team &amp; Fudan NLP Group." />
+  <meta property="og:title" content="Context Research" />
+  <meta property="og:description" content="Benchmarks and leaderboards for evaluating how well AI models understand and manage context." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <title>Context Research</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="clb.css" />
+  <link rel="stylesheet" href="clb-life.css" />
+  <link rel="stylesheet" href="case-modal.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="bg--main">
+  <!-- Fixed background -->
+  <div class="bg-fixed" id="bg-fixed"></div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#section-main" class="mobile-nav-item active" data-section="section-main">Main</a>
+    <a href="#section-life" class="mobile-nav-item" data-section="section-life">CLbench-life</a>
+    <a href="#section-clb" class="mobile-nav-item" data-section="section-clb">CL-bench</a>
+  </nav>
+
+  <!-- Header (hidden) -->
+  <header class="header" style="display:none;">
+    <div class="header-inner">
+      <a href="#" class="header-logo" id="logo-home">Context Research</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <a href="#section-main" class="sidebar-logo">Context Research</a>
+      <nav class="sidebar-nav">
+        <a href="#section-main" class="sidebar-item active" data-section="section-main">Main Page</a>
+        <a href="#section-life" class="sidebar-item" data-section="section-life">CLbench-life</a>
+        <a href="#section-clb" class="sidebar-item" data-section="section-clb">CL-bench</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+
+      <!-- Section: Main -->
+      <div class="hero-banner hero-banner--main hero-banner--fullpage" id="section-main">
+        <div class="hero-content hero-content--landing">
+          <h1 class="hero-title hero-title--landing">Context Research</h1>
+          <p class="hero-desc">AI systems solve real-world tasks in a continuous cycle: enriching context, reasoning over context, and retaining what they learn from context. Context should be at the core of AI system design, with the model and the harness co-evolving around it. The model must recognize what context a task requires, and the harness must give it efficient ways to acquire the right context. As the task progresses, context becomes complex, messy, and constantly changing. The model then must be able to autonomously plan, manage, and reason over context, while the harness must provide efficient support for context management. Neither side is enough on its own, and real progress requires both to improve together.</p>
+          <p class="hero-desc hero-desc--highlight">Our long-term mission is clear: to develop rigorous measurements of how well models understand and manage context, and explore scalable ways to build AI systems that are better at handling complex context.</p>
+          <p class="hero-transition">Our research &darr;</p>
+          <div class="hero-projects">
+            <div class="hero-project-card hero-project-card--cool" role="link" tabindex="0" data-goto="clb-life">
+              <div class="hero-project-main">
+                <h3 class="hero-project-title">CLBench-life<span class="hero-project-subtag">Evaluating context learning in everyday life.</span></h3>
+                <div class="hero-project-meta-row">
+                  <span class="hero-project-pill">405 tasks</span>
+                  <a href="#" class="resource-link" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M1 8h14M8 1c-2 2.5-2 10.5 0 14M8 1c2 2.5 2 10.5 0 14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    Blog
+                  </a>
+                  <a href="#" class="resource-link">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10 1v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M6 8h6M6 11h4" stroke="currentColor" stroke-width="1.5"/></svg>
+                    Paper
+                  </a>
+                  <a href="#" class="resource-link" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8c0 3.1 2.01 5.73 4.79 6.65.35.06.48-.15.48-.34 0-.17-.01-.71-.01-1.29-1.75.32-2.2-.43-2.34-.82-.08-.2-.42-.82-.71-.99-.24-.13-.59-.46-.01-.47.55-.01.94.51 1.07.71.63 1.05 1.63.76 2.03.58.06-.45.24-.76.44-.93-1.55-.18-3.17-.78-3.17-3.46 0-.76.27-1.39.71-1.88-.07-.18-.31-.89.07-1.85 0 0 .58-.19 1.9.71a6.5 6.5 0 0 1 3.44 0c1.32-.9 1.9-.71 1.9-.71.38.96.14 1.67.07 1.85.44.49.71 1.11.71 1.88 0 2.69-1.63 3.28-3.18 3.46.25.22.47.64.47 1.29 0 .93-.01 1.68-.01 1.91 0 .19.13.41.48.34A7.01 7.01 0 0 0 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+                    Code
+                  </a>
+                  <a href="#" class="resource-link" target="_blank" rel="noopener">
+                    <img src="huggingface_logo-noborder.svg" width="12" height="12" alt="HF" style="vertical-align: middle;" />
+                    Data
+                  </a>
+                </div>
+              </div>
+              <span class="hero-project-cta" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+            <div class="hero-project-card hero-project-card--warm" role="link" tabindex="0" data-goto="clb">
+              <div class="hero-project-main">
+                <h3 class="hero-project-title">CL-bench<span class="hero-project-subtag">Evaluating context learning in more professional domains.</span></h3>
+                <div class="hero-project-meta-row">
+                  <span class="hero-project-pill">1,899 tasks</span>
+                  <a href="https://hy.tencent.com/research/100025?langVersion=en" class="resource-link" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M1 8h14M8 1c-2 2.5-2 10.5 0 14M8 1c2 2.5 2 10.5 0 14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    Blog
+                  </a>
+                  <a href="https://arxiv.org/abs/2602.03587" class="resource-link" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10 1v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M6 8h6M6 11h4" stroke="currentColor" stroke-width="1.5"/></svg>
+                    Paper
+                  </a>
+                  <a href="https://github.com/Tencent-Hunyuan/CL-bench" class="resource-link" target="_blank" rel="noopener">
+                    <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8c0 3.1 2.01 5.73 4.79 6.65.35.06.48-.15.48-.34 0-.17-.01-.71-.01-1.29-1.75.32-2.2-.43-2.34-.82-.08-.2-.42-.82-.71-.99-.24-.13-.59-.46-.01-.47.55-.01.94.51 1.07.71.63 1.05 1.63.76 2.03.58.06-.45.24-.76.44-.93-1.55-.18-3.17-.78-3.17-3.46 0-.76.27-1.39.71-1.88-.07-.18-.31-.89.07-1.85 0 0 .58-.19 1.9.71a6.5 6.5 0 0 1 3.44 0c1.32-.9 1.9-.71 1.9-.71.38.96.14 1.67.07 1.85.44.49.71 1.11.71 1.88 0 2.69-1.63 3.28-3.18 3.46.25.22.47.64.47 1.29 0 .93-.01 1.68-.01 1.91 0 .19.13.41.48.34A7.01 7.01 0 0 0 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+                    Code
+                  </a>
+                  <a href="https://huggingface.co/datasets/tencent/CL-bench" class="resource-link" target="_blank" rel="noopener">
+                    <img src="huggingface_logo-noborder.svg" width="12" height="12" alt="HF" style="vertical-align: middle;" />
+                    Data
+                  </a>
+                </div>
+              </div>
+              <span class="hero-project-cta" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: CLBench-Life -->
+      <div class="page-panel-wrap" id="section-life">
+      <div class="page-panel">
+        <div class="panel-header">
+          <span class="hero-tag">Leaderboard</span>
+          <h1 class="hero-title">CLBench-life: Can Language Models Learn From Real-life Context? </h1>
+          <div class="resource-bar">
+            <a href="#" class="resource-link" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M1 8h14M8 1c-2 2.5-2 10.5 0 14M8 1c2 2.5 2 10.5 0 14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+              Project Page
+            </a>
+            <a href="#" class="resource-link">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10 1v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M6 8h6M6 11h4" stroke="currentColor" stroke-width="1.5"/></svg>
+              Paper
+            </a>
+            <a href="#" class="resource-link" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8c0 3.1 2.01 5.73 4.79 6.65.35.06.48-.15.48-.34 0-.17-.01-.71-.01-1.29-1.75.32-2.2-.43-2.34-.82-.08-.2-.42-.82-.71-.99-.24-.13-.59-.46-.01-.47.55-.01.94.51 1.07.71.63 1.05 1.63.76 2.03.58.06-.45.24-.76.44-.93-1.55-.18-3.17-.78-3.17-3.46 0-.76.27-1.39.71-1.88-.07-.18-.31-.89.07-1.85 0 0 .58-.19 1.9.71a6.5 6.5 0 0 1 3.44 0c1.32-.9 1.9-.71 1.9-.71.38.96.14 1.67.07 1.85.44.49.71 1.11.71 1.88 0 2.69-1.63 3.28-3.18 3.46.25.22.47.64.47 1.29 0 .93-.01 1.68-.01 1.91 0 .19.13.41.48.34A7.01 7.01 0 0 0 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+              Code
+            </a>
+            <a href="#" class="resource-link" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M5 7v2M8 6v3M11 8v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Data
+            </a>
+          </div>
+        </div>
+        <div class="panel-body" id="page-clb-life">
+
+        <div class="clb-intro">
+          <p>Real-life contexts are highly complex, messy, and fragmented. CLBench-Life aims to evaluate models' context learning ability under such real-world contexts.</p>
+        </div>
+
+        <div class="clb-stats">
+          <div class="stat">
+            <span class="stat-number">405</span>
+            <span class="stat-label">Tasks</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5,348</span>
+            <span class="stat-label">Rubrics</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Context Categories</span>
+          </div>
+        </div>
+
+        <!-- Case Showcase -->
+        <div class="life-cases">
+          <div class="life-case life-case--warm" tabindex="0" role="button" aria-expanded="false" data-case-index="0">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M19 21v-1a4 4 0 0 0-4-4h-2a4 4 0 0 0-4 4v1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="14" cy="9" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M24 21v-1a3 3 0 0 0-2.2-2.9M18.5 5.2a3.5 3.5 0 0 1 0 6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 21v-1a3 3 0 0 1 2.2-2.9M9.5 5.2a3.5 3.5 0 0 0 0 6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Communication &amp; Social Interactions</h3>
+                <span class="life-case-subtitle"><span class="life-case-subtitle-label">3 subcategories:</span> <span class="life-case-subcat">Private Conversations</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat is-active">Group Conversations &amp; Meeting Transcripts</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat">Community Interactions</span></span>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case from <strong>Group Conversations &amp; Meeting Transcripts</strong></div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                Months of overlapping book-club group chat — free-clothing handoffs, a husband returning home, fantasy-football recruitment, baking taste-tests, puppy-sitter requests, August meeting RSVPs, and a long-running thread to lock down the November "fancy" dinner.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Trace the November "fancy" meeting from first proposal to final decision — restaurant and date changes, every conflicting schedule constraint, who can or can't attend (and why), whether the final plan honored all stated constraints, and who drove the logistics.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+
+          <div class="life-case life-case--cool" tabindex="0" role="button" aria-expanded="false" data-case-index="1">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><rect x="4" y="3" width="20" height="22" rx="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 8h10M9 12h7M9 16h10M9 20h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Fragmented Information &amp; Revisions</h3>
+                <span class="life-case-subtitle"><span class="life-case-subtitle-label">3 subcategories:</span> <span class="life-case-subcat is-active">Personal Information Fragments</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat">Public Information Fragments</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat">Creation &amp; Revision Histories</span></span>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case from <strong>Personal Information Fragments</strong></div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                A cyclist's personal note collection spanning years of bike trip logs (Day 12, Day 25, …), maintenance records, tire specs, and scattered observations about weather disruptions, gear failures, and emergency workarounds.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Synthesize the fragmented notes into a structured pre-trip checklist for an upcoming 5-day bike trip — each item must be justified by a specific note entry, enhancing safety and trip success while avoiding impractical workshop-only tools.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+
+          <div class="life-case life-case--neutral" tabindex="0" role="button" aria-expanded="false" data-case-index="2">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M4 20l4-4 3 3 5-7 4 4 4-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="3" y="3" width="22" height="22" rx="3" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Behavioral Records &amp; Activity Trails</h3>
+                <span class="life-case-subtitle"><span class="life-case-subtitle-label">3 subcategories:</span> <span class="life-case-subcat">Game Logs</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat">Digital Footprints &amp; Daily-Life Records</span> <span class="life-case-subcat-sep">/</span> <span class="life-case-subcat is-active">Self-Tracking Trajectories</span></span>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case from <strong>Self-Tracking Trajectories</strong></div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                Detailed workout log data (TSV) covering dozens of exercises across 2023–2024 — including weights, reps, and dates — with a 3-month injury gap before resuming in 2024.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Identify which muscle groups were most negatively impacted by the injury break, spot specific plateaus in the 2024 routine (e.g., lat pulldown stuck at 90 lbs), and recommend concrete adjustments to break through them.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Leaderboard -->
+        <div class="clb-leaderboard" id="life-leaderboard">
+          <div class="clb-toolbar">
+            <div class="clb-filters life-org-filters">
+              <button class="clb-filter active" data-org="all">All</button>
+              <button class="clb-filter" data-org="OpenAI">OpenAI</button>
+              <button class="clb-filter" data-org="Anthropic">Anthropic</button>
+              <button class="clb-filter" data-org="Google">Google</button>
+              <button class="clb-filter" data-org="Alibaba">Alibaba</button>
+              <button class="clb-filter" data-org="DeepSeek">DeepSeek</button>
+              <button class="clb-filter" data-org="Moonshot">Moonshot</button>
+              <button class="clb-filter" data-org="ByteDance">ByteDance</button>
+              <button class="clb-filter" data-org="Tencent">Tencent</button>
+              <button class="clb-filter" data-org="xAI">xAI</button>
+              <button class="clb-filter" data-org="MiniMax">MiniMax</button>
+            </div>
+            <div class="clb-filters life-reasoning-filters">
+              <button class="clb-filter active" data-reason="all">All</button>
+              <button class="clb-filter" data-reason="high">High Reasoning</button>
+              <button class="clb-filter" data-reason="low">Low/No Reasoning</button>
+            </div>
+          </div>
+
+          <div class="clb-category-tabs life-cat-tabs">
+            <button class="clb-cat-tab active" data-cat="overall">Overall</button>
+            <button class="clb-cat-tab" data-cat="interpersonal">Communication &amp; Social Interactions</button>
+            <button class="clb-cat-tab" data-cat="thought">Fragmented Information &amp; Revisions</button>
+            <button class="clb-cat-tab" data-cat="behavior">Behavioral Records &amp; Activity Trails</button>
+          </div>
+
+          <div class="clb-table-wrap">
+            <table class="clb-table">
+              <thead>
+                <tr>
+                  <th style="width:28px">Rank</th>
+                  <th>Model</th>
+                  <th>Organization</th>
+                  <th id="life-score-header">Solving Rate (&plusmn;std)</th>
+                  <th style="width:18px"></th>
+                </tr>
+              </thead>
+              <tbody id="life-tbody"></tbody>
+            </table>
+          </div>
+          <p class="life-footnote"><sup>&dagger;</sup> Single run &mdash; no standard deviation available.</p>
+        </div>
+
+        <div class="divider" style="margin-top:24px"></div>
+
+        <!-- Pass Score Curve Chart -->
+        <div class="psc-section" id="psc-section">
+          <h3 class="psc-title">Task pass rate under different thresholds</h3>
+          <p class="psc-desc">Different models' task pass rates across pass score thresholds. Higher thresholds are stricter, resulting in lower pass rates.</p>
+
+          <div class="psc-controls">
+            <div class="psc-model-toggles" id="psc-model-toggles"></div>
+          </div>
+
+          <div class="psc-chart-container">
+            <canvas id="psc-chart"></canvas>
+          </div>
+
+          <div class="psc-detail-panel" id="psc-detail-panel">
+            <h4 class="psc-detail-title">Model Details</h4>
+            <p class="psc-hint"><strong>Hover</strong> a table row or chart line to focus; <strong>click a row in the Model Details table</strong> to pin that line.</p>
+            <div class="psc-detail-table-wrap">
+              <table class="psc-detail-table" id="psc-detail-table">
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>100%</th>
+                    <th>95%</th>
+                    <th>90%</th>
+                    <th>85%</th>
+                    <th>80%</th>
+                    <th>75%</th>
+                    <th>70%</th>
+                    <th>65%</th>
+                  </tr>
+                </thead>
+                <tbody id="psc-detail-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider" style="margin-top:24px"></div>
+
+        <div class="submit-section">
+          <h3>Submit Your Model</h3>
+          <p>Run your model on CLBench-Life, score with our scripts, and submit a PR with your results.</p>
+          <div class="submit-links">
+            <a href="https://huggingface.co/datasets/tencent/CL-bench" class="submit-link" target="_blank" rel="noopener">
+              <img src="huggingface_logo-noborder.svg" width="14" height="14" alt="HF" style="vertical-align: middle;" />
+              Dataset
+            </a>
+            <a href="https://github.com/Tencent-Hunyuan/CL-bench" class="submit-link" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              Code &amp; Submission
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+      <!-- Section: CL-bench -->
+      <div class="page-panel-wrap" id="section-clb">
+      <div class="page-panel">
+        <div class="panel-header">
+          <span class="hero-tag">Leaderboard</span>
+          <h1 class="hero-title">CL-bench: A Benchmark for Context Learning</h1>
+          <div class="resource-bar">
+            <a href="https://hy.tencent.com/research/100025?langVersion=en" class="resource-link" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M1 8h14M8 1c-2 2.5-2 10.5 0 14M8 1c2 2.5 2 10.5 0 14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+              Blog
+            </a>
+            <a href="https://arxiv.org/abs/2602.03587" class="resource-link" id="link-paper">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 1h6l4 4v10H4V1z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M10 1v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M6 8h6M6 11h4" stroke="currentColor" stroke-width="1.5"/></svg>
+              Paper
+            </a>
+            <a href="https://github.com/Tencent-Hunyuan/CL-bench" class="resource-link" target="_blank" rel="noopener">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M8 1C4.13 1 1 4.13 1 8c0 3.1 2.01 5.73 4.79 6.65.35.06.48-.15.48-.34 0-.17-.01-.71-.01-1.29-1.75.32-2.2-.43-2.34-.82-.08-.2-.42-.82-.71-.99-.24-.13-.59-.46-.01-.47.55-.01.94.51 1.07.71.63 1.05 1.63.76 2.03.58.06-.45.24-.76.44-.93-1.55-.18-3.17-.78-3.17-3.46 0-.76.27-1.39.71-1.88-.07-.18-.31-.89.07-1.85 0 0 .58-.19 1.9.71a6.5 6.5 0 0 1 3.44 0c1.32-.9 1.9-.71 1.9-.71.38.96.14 1.67.07 1.85.44.49.71 1.11.71 1.88 0 2.69-1.63 3.28-3.18 3.46.25.22.47.64.47 1.29 0 .93-.01 1.68-.01 1.91 0 .19.13.41.48.34A7.01 7.01 0 0 0 15 8c0-3.87-3.13-7-7-7z" fill="currentColor"/></svg>
+              Code
+            </a>
+            <a href="https://huggingface.co/datasets/tencent/CL-bench" class="resource-link" target="_blank" rel="noopener">
+              <img src="huggingface_logo-noborder.svg" width="12" height="12" alt="HF" style="vertical-align: middle;" />
+              Data
+            </a>
+          </div>
+        </div>
+        <div class="panel-body" id="page-clb">
+
+        <div class="clb-intro">
+          <p>CL-bench evaluates language models' ability to learn from context, learning new knowledge at inference time rather than relying on pre-trained parametric memory. Solving tasks requires models to learn from the provided context.</p>
+        </div>
+
+        <div class="clb-stats">
+          <div class="stat">
+            <span class="stat-number">1,899</span>
+            <span class="stat-label">Tasks</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">31,607</span>
+            <span class="stat-label">Rubrics</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Context Categories</span>
+          </div>
+        </div>
+
+        <!-- Case Showcase: one example per category -->
+        <div class="life-cases">
+          <div class="life-case life-case--warm clb-case" tabindex="0" role="button" aria-expanded="false" data-case-source="clb" data-case-index="0">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="12" height="16" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 8h6M7 12h6M7 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="14" y="10" width="10" height="12" rx="1.5" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M17 14h4M17 18h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Domain Knowledge Reasoning</h3>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case &middot; Genfanad PM onboarding</div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                A raw document dump from a small indie studio building a video game — geography notes, map tiles, character art briefs, audio assets, UI mockups, HR records, marketing plans, and a few files that aren't even about the project — under a PM-bot spec that demands strict tables, explicit confidence scores, PII suppression, and no speculation beyond the source text.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Organize every piece of information into a table keyed by development channel, cite the source document for each entry, attach a bold 0–100% confidence score, and adapt the output cleanly across two revision requests — while also assembling a separate one-sentence summary list of all world-building topics.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+
+          <div class="life-case life-case--cool clb-case" tabindex="0" role="button" aria-expanded="false" data-case-source="clb" data-case-index="1">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M10 8l-5 6 5 6M18 8l5 6-5 6M15 6l-2 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Rule System Application</h3>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case &middot; EZLang teaching-language assistant</div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                A full specification of <em>EZLang</em>, a minimal English-like teaching language with its own <code>var</code>/<code>set</code> syntax, <code>if</code>/<code>for</code>/<code>while</code> constructs, and a small set of system global functions (<code>print</code>, <code>sleep</code>, <code>getTime</code>, …) — paired with a coding-coach persona aimed at non-technical high-schoolers.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Write a time-checker program that polls every 30 minutes, stops at 5:30pm, and prints the full log; then explain the program line by line and cite the exact EZLang global-function docs for each call — without smuggling in any keyword (e.g. <code>break</code>) the language doesn't actually define.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+
+          <div class="life-case life-case--neutral clb-case" tabindex="0" role="button" aria-expanded="false" data-case-source="clb" data-case-index="2">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M6 10c0-3 3-5 8-5s8 2 8 5c0 2-1 3-3 4-2 1-3 2-3 5v1H9v-1c0-3-1-4-3-5-2-1-3-2-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" fill="none"/><path d="M9 22h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Procedural Task Execution</h3>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case &middot; Shelby's peanut- &amp; dairy-free recipe assistant</div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                A strict recipe-bot spec — no peanuts, no dairy, mandatory Shelby's product inclusion, ≤15 min hands-on prep, rigid output template — plus a long inspiration dump of oxtail mac-and-cheese recipes and Thanksgiving menus the user pastes in.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Turn a dairy-heavy oxtail mac-and-cheese request into a compliant dairy-free elevated version featuring a Shelby's product, scale the recipe down to 1 lb of oxtail, and then pivot mid-dinner to a sub-5-minute no-bake dessert when the user's coconut pie cracks — all while keeping peanuts and dairy out.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+
+          <div class="life-case life-case--lilac clb-case" tabindex="0" role="button" aria-expanded="false" data-case-source="clb" data-case-index="3">
+            <div class="life-case-header">
+              <div class="life-case-icon">
+                <svg width="14" height="14" viewBox="0 0 28 28" fill="none"><path d="M4 20c3-8 7-8 10 0s7 8 10 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><circle cx="4" cy="20" r="1.8" fill="currentColor"/><circle cx="24" cy="20" r="1.8" fill="currentColor"/><path d="M14 4v3M14 24v-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="life-case-header-text">
+                <h3 class="life-case-title">Empirical Discovery &amp; Simulation</h3>
+              </div>
+              <span class="life-case-arrow">&#x25BC;</span>
+            </div>
+            <div class="life-case-body">
+              <div class="life-case-example-note">An example case &middot; Electron in a magnetic field</div>
+              <div class="life-case-context">
+                <span class="life-case-badge">Context</span>
+                A raw CSV of roughly 1,000 (t, x, y, z) points sampling an electron's helical trajectory through a uniform magnetic field, paired with a reverse-engineering system prompt that enforces Occam's razor and a strict <em>parameter-tuning</em> mode.
+              </div>
+              <div class="life-case-task">
+                <span class="life-case-badge life-case-badge--task">Task</span>
+                Recover the underlying physics across three turns: the pitch angle at which the electron enters the field (3 sig figs), the magnetic field strength in tesla (1 sig fig), and the initial speed in standard form — reusing earlier numerical estimates instead of re-deriving them.
+              </div>
+              <span class="life-case-view-full">View Full Case<span class="life-case-view-full-arrow">&rarr;</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Leaderboard -->
+        <div class="clb-leaderboard" id="clb-leaderboard">
+          <div class="clb-toolbar">
+            <div class="clb-filters clb-org-filters">
+              <button class="clb-filter active" data-org="all">All</button>
+              <button class="clb-filter" data-org="OpenAI">OpenAI</button>
+              <button class="clb-filter" data-org="Anthropic">Anthropic</button>
+              <button class="clb-filter" data-org="Google">Google</button>
+              <button class="clb-filter" data-org="Alibaba">Alibaba</button>
+              <button class="clb-filter" data-org="DeepSeek">DeepSeek</button>
+              <button class="clb-filter" data-org="Moonshot">Moonshot</button>
+              <button class="clb-filter" data-org="ByteDance">ByteDance</button>
+              <button class="clb-filter" data-org="Tencent">Tencent</button>
+            </div>
+            <div class="clb-filters clb-reasoning-filters">
+              <button class="clb-filter clb-reason-filter active" data-reason="all">All</button>
+              <button class="clb-filter clb-reason-filter" data-reason="high">High Reasoning</button>
+              <button class="clb-filter clb-reason-filter" data-reason="low">Low/No Reasoning</button>
+            </div>
+          </div>
+
+          <div class="clb-category-tabs clb-cat-tabs">
+            <button class="clb-cat-tab active" data-cat="overall">Overall</button>
+            <button class="clb-cat-tab" data-cat="domain">Domain Knowledge Reasoning</button>
+            <button class="clb-cat-tab" data-cat="rule">Rule System Application</button>
+            <button class="clb-cat-tab" data-cat="procedural">Procedural Task Execution</button>
+            <button class="clb-cat-tab" data-cat="pattern">Empirical Discovery &amp; Simulation</button>
+          </div>
+
+          <div class="clb-table-wrap">
+            <table class="clb-table">
+              <thead>
+                <tr>
+                  <th style="width:28px">Rank</th>
+                  <th>Model</th>
+                  <th>Organization</th>
+                  <th id="clb-score-header">Solving Rate (&plusmn;std)</th>
+                  <th style="width:18px"></th>
+                </tr>
+              </thead>
+              <tbody id="clb-tbody"></tbody>
+            </table>
+          </div>
+          <p class="clb-footnote"><sup>&dagger;</sup> Single run &mdash; no standard deviation available.</p>
+        </div>
+
+        <div class="divider" style="margin-top:24px"></div>
+
+        <!-- About cards -->
+        <div class="submit-section">
+          <h3>Submit Your Model</h3>
+          <p>Run your model on CL-bench, score with our scripts, and submit a PR with your results.</p>
+          <div class="submit-links">
+            <a href="https://huggingface.co/datasets/tencent/CL-bench" class="submit-link" target="_blank" rel="noopener">
+              <img src="huggingface_logo-noborder.svg" width="14" height="14" alt="HF" style="vertical-align: middle;" />
+              Dataset
+            </a>
+            <a href="https://github.com/Tencent-Hunyuan/CL-bench" class="submit-link" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              Code &amp; Submission
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025&ndash;2026 Tencent Hunyuan Team &amp; Fudan NLP Group. All rights reserved.</p>
+  </footer>
+
+  <!-- Case Modal -->
+  <div class="case-modal-overlay" id="case-modal-overlay">
+    <div class="case-modal-panel">
+      <div class="case-modal-header">
+        <div class="case-modal-header-text">
+          <h2 class="case-modal-title"></h2>
+          <span class="case-modal-category"></span>
+        </div>
+        <button class="case-modal-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="case-modal-summary"></div>
+      <div class="case-modal-content">
+        <div class="cm-col cm-col--messages">
+          <div class="cm-col-header">
+            <span class="cm-col-title">Messages</span>
+            <span class="cm-col-count" id="cm-messages-count">0</span>
+          </div>
+          <div class="cm-col-body" id="cm-messages-body"></div>
+        </div>
+        <div class="cm-col cm-col--rubrics">
+          <div class="cm-col-header">
+            <span class="cm-col-title">Rubrics</span>
+            <span class="cm-col-count" id="cm-rubrics-count">0</span>
+          </div>
+          <div class="cm-col-body" id="cm-rubrics-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/cases-data.js"></script>
+  <script src="data/clb-cases-data.js"></script>
+  <script src="script.js"></script>
+  <script src="leaderboard.js"></script>
+  <script src="clb.js"></script>
+  <script src="clb-life.js"></script>
+  <script src="case-modal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="pass-score-chart.js"></script>
+</body>
+</html>
