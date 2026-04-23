@@ -6,7 +6,7 @@
 
 :root {
   --header-height: 36px;
-  --sidebar-width: 130px;
+  --sidebar-width: 150px;
   --black: #000;
   --text: #1a1a1a;
   --text-secondary: #444;
@@ -47,15 +47,15 @@ a {
 }
 
 body.bg--main .bg-fixed {
-  background-image: url('pierredou_abstract_flowing_line_art_layered_horizontal_white__09dd58fa-5654-4712-b409-5639c6ee51af_1.gif');
+  background-image: url('./png/page1.png');
 }
 
 body.bg--clb .bg-fixed {
-  background-image: url('pierredou_abstract_flowing_line_art_layered_horizontal_cobalt_87d62fb5-f1a1-4ef5-9610-5fcb539f630d_3.png');
+  background-image: url('./png/page2.png');
 }
 
 body.bg--life .bg-fixed {
-  background-image: url('pierredou_abstract_flowing_line_art_layered_horizontal_sapphi_afe3b7d4-7314-499d-a6ba-d4b4b011316d_3.png');
+  background-image: url('./png/page3.png');
 }
 
 /* ===== Header (frosted glass) ===== */
@@ -136,7 +136,7 @@ body.bg--life .bg-fixed {
 
 .sidebar-logo {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 900;
   color: var(--black);
   letter-spacing: -0.02em;
@@ -162,11 +162,11 @@ body.bg--life .bg-fixed {
 
 .sidebar-item {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--text-secondary);
   opacity: 0.6;
-  padding: 5px 7px;
+  padding: 7px 7px;
   border-radius: 3px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -179,7 +179,7 @@ body.bg--life .bg-fixed {
 }
 
 .sidebar-item.active {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   color: var(--black);
   opacity: 1;
