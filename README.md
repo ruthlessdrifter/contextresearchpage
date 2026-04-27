@@ -3,7 +3,7 @@
 本仓库是 Context Research 的静态前端页面，包含两个榜单：
 
 - **CL-bench**（`#section-clb`）
-- **CLbench-life**（`#section-life`）
+- **CL-bench Life**（`#section-life`）
 
 数据全部由前端 `fetch()` 加载 JSON，无需构建。本地预览：
 
@@ -18,7 +18,7 @@ bash serve.sh          # 默认 http://localhost:8080
 ```
 data/
   clb-data.json              ← CL-bench 榜单分数（核心）
-  life-data.json             ← CLbench-life 榜单分数（核心）
+  life-data.json             ← CL-bench Life 榜单分数（核心）
   pass_score_curve_web.json  ← Life 的 Pass-Score 曲线（参考文件，当前页面不读）
 pass-score-chart.js          ← Life Pass-Score 曲线，数据内联在 PSC_DATA（实际生效处）
 clb.js / clb-life.js         ← 调用 leaderboard.js 渲染榜单
@@ -67,7 +67,7 @@ past/                        ← 暂不需要的旧文件（图片、node_module
 
 ---
 
-## 2. 添加 / 注册 CLbench-life 模型分数
+## 2. 添加 / 注册 CL-bench Life 模型分数
 
 ### 2.1 榜单分数（必须）
 
@@ -134,8 +134,8 @@ past/                        ← 暂不需要的旧文件（图片、node_module
 | 目标 | 改动 |
 |---|---|
 | CL-bench 新增一个模型 | 在 `data/clb-data.json` 数组末尾加一条对象，完成 |
-| CLbench-life 新增一个模型（只加榜单） | 在 `data/life-data.json` 数组末尾加一条对象，完成 |
-| CLbench-life 同时加 Pass-Score 曲线 | 再在 `pass-score-chart.js` 的 `PSC_DATA.series` 里加一条，并可选加到 `DEFAULT_MODELS` |
+| CL-bench Life 新增一个模型（只加榜单） | 在 `data/life-data.json` 数组末尾加一条对象，完成 |
+| CL-bench Life 同时加 Pass-Score 曲线 | 再在 `pass-score-chart.js` 的 `PSC_DATA.series` 里加一条，并可选加到 `DEFAULT_MODELS` |
 | 想让模型被 "High Reasoning" 筛选识别 | 模型名里加 `(High)` / `(xHigh)` / `Thinking` 等关键词 |
 | 单跑没有 std | 把所有 `*_std` 字段填 `0`，页面会自动标 `†` |
 | 预览效果 | `bash serve.sh` 然后访问 `http://localhost:8080` |

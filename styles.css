@@ -370,6 +370,10 @@ body.bg--life .bg-fixed {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --mobile-content-gutter: 12px;
+  }
+
   .sidebar {
     display: none;
   }
@@ -413,7 +417,7 @@ body.bg--life .bg-fixed {
 
   .main-content {
     margin-left: 0;
-    padding: 44px 0 40px;
+    padding: 56px 0 40px;
     width: 100%;
   }
 
@@ -423,13 +427,18 @@ body.bg--life .bg-fixed {
 
   .hero-banner {
     min-height: auto;
-    padding: 12px 8px;
+    padding: 12px var(--mobile-content-gutter);
   }
 
   .hero-content {
     max-width: 100%;
     padding: 16px 12px;
     border-radius: 8px;
+  }
+
+  .hero-banner--fullpage .hero-content {
+    max-width: 100%;
+    width: 100%;
   }
 
   .page-panel-wrap {
@@ -439,7 +448,8 @@ body.bg--life .bg-fixed {
 
   .page-panel {
     max-width: 100%;
-    margin: 0 8px;
+    width: calc(100% - (var(--mobile-content-gutter) * 2));
+    margin: 0 var(--mobile-content-gutter);
     border-radius: 8px;
   }
 
@@ -456,7 +466,7 @@ body.bg--life .bg-fixed {
   }
 
   .hero-banner--fullpage {
-    padding: 0 12px;
+    padding: 12px var(--mobile-content-gutter) 0;
   }
 
   .hero-title--landing {

@@ -1,12 +1,12 @@
 #!/bin/bash
 # 用途: 从 context_logo_board_12_alt (1).png 裁出两个 logo, 生成透明背景的 PNG
-#       用于放到 index.html 中 CLBench-life / CL-bench 两张卡片的右上角。
+#       用于放到 index.html 中 CL-bench Life / CL-bench 两张卡片的右上角。
 #
 # 用法:
 #   bash extract_logos.sh
 #
 # 输出:
-#   logos/logo_life.png  —— CLBench-life 卡片右上角 logo (分支/星系形)
+#   logos/logo_life.png  —— CL-bench Life 卡片右上角 logo (分支/星系形)
 #   logos/logo_clb.png   —— CL-bench   卡片右上角 logo (四色块形)
 #
 # 依赖:
