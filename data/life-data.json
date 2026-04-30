@@ -1,4 +1,5 @@
 [
+  { "model": "GPT 5.5 (High)", "org": "OpenAI", "overall": 0.222, "overall_std": 0.005, "interpersonal": 0.235, "interpersonal_std": 0.007, "thought": 0.178, "thought_std": 0.006, "behavior": 0.254, "behavior_std": 0.025 },
   { "model": "GPT 5.4 (xHigh)", "org": "OpenAI", "overall": 0.217, "overall_std": 0.000, "interpersonal": 0.230, "interpersonal_std": 0.000, "thought": 0.174, "thought_std": 0.000, "behavior": 0.246, "behavior_std": 0.000 },
   { "model": "GPT 5.4 (High)", "org": "OpenAI", "overall": 0.193, "overall_std": 0.005, "interpersonal": 0.222, "interpersonal_std": 0.007, "thought": 0.158, "thought_std": 0.009, "behavior": 0.200, "behavior_std": 0.007 },
   { "model": "GPT 5.1 (High)", "org": "OpenAI", "overall": 0.173, "overall_std": 0.000, "interpersonal": 0.215, "interpersonal_std": 0.000, "thought": 0.119, "thought_std": 0.000, "behavior": 0.185, "behavior_std": 0.000 },
@@ -6,6 +7,7 @@
   { "model": "Gemini 3.1 Pro (High)", "org": "Google", "overall": 0.169, "overall_std": 0.012, "interpersonal": 0.188, "interpersonal_std": 0.017, "thought": 0.136, "thought_std": 0.019, "behavior": 0.183, "behavior_std": 0.015 },
   { "model": "Hy3 preview (High)", "org": "Tencent", "overall": 0.157, "overall_std": 0.009, "interpersonal": 0.170, "interpersonal_std": 0.021, "thought": 0.159, "thought_std": 0.016, "behavior": 0.141, "behavior_std": 0.021 },
   { "model": "Seed 2.0 Pro (High)", "org": "ByteDance", "overall": 0.155, "overall_std": 0.017, "interpersonal": 0.198, "interpersonal_std": 0.023, "thought": 0.121, "thought_std": 0.024, "behavior": 0.146, "behavior_std": 0.011 },
+  { "model": "DeepSeek V4 Pro (High)", "org": "DeepSeek", "overall": 0.135, "overall_std": 0.014, "interpersonal": 0.126, "interpersonal_std": 0.016, "thought": 0.121, "thought_std": 0.024, "behavior": 0.158, "behavior_std": 0.003 },
   { "model": "Kimi K2.5 (High)", "org": "Moonshot", "overall": 0.132, "overall_std": 0.008, "interpersonal": 0.153, "interpersonal_std": 0.011, "thought": 0.114, "thought_std": 0.015, "behavior": 0.128, "behavior_std": 0.004 },
   { "model": "Hy3 preview (Low)", "org": "Tencent", "overall": 0.128, "overall_std": 0.000, "interpersonal": 0.185, "interpersonal_std": 0.000, "thought": 0.104, "thought_std": 0.000, "behavior": 0.096, "behavior_std": 0.000 },
   { "model": "Qwen 3.5 Plus (High)", "org": "Alibaba", "overall": 0.124, "overall_std": 0.001, "interpersonal": 0.131, "interpersonal_std": 0.009, "thought": 0.101, "thought_std": 0.011, "behavior": 0.141, "behavior_std": 0.007 },
