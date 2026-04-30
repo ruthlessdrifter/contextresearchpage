@@ -14,7 +14,7 @@
   { "model": "Seed 2.0 Pro (Medium)", "org": "ByteDance", "overall": 0.114, "overall_std": 0.000, "interpersonal": 0.119, "interpersonal_std": 0.000, "thought": 0.104, "thought_std": 0.000, "behavior": 0.119, "behavior_std": 0.000 },
   { "model": "GLM-4.7 (High)", "org": "Zhipu", "overall": 0.109, "overall_std": 0.000, "interpersonal": 0.126, "interpersonal_std": 0.000, "thought": 0.111, "thought_std": 0.000, "behavior": 0.089, "behavior_std": 0.000 },
   { "model": "DeepSeek V3.2 Thinking", "org": "DeepSeek", "overall": 0.095, "overall_std": 0.004, "interpersonal": 0.123, "interpersonal_std": 0.011, "thought": 0.077, "thought_std": 0.011, "behavior": 0.086, "behavior_std": 0.017 },
-  { "model": "Hunyuan 2.0 Thinking", "org": "Tencent", "overall": 0.084, "overall_std": 0.007, "interpersonal": 0.094, "interpersonal_std": 0.015, "thought": 0.094, "thought_std": 0.015, "behavior": 0.064, "behavior_std": 0.004 },
+  { "model": "Hy2.0 Thinking", "org": "Tencent", "overall": 0.084, "overall_std": 0.007, "interpersonal": 0.094, "interpersonal_std": 0.015, "thought": 0.094, "thought_std": 0.015, "behavior": 0.064, "behavior_std": 0.004 },
   { "model": "MiMo v2 Pro (High)", "org": "Xiaomi", "overall": 0.069, "overall_std": 0.000, "interpersonal": 0.096, "interpersonal_std": 0.000, "thought": 0.052, "thought_std": 0.000, "behavior": 0.059, "behavior_std": 0.000 },
   { "model": "MiniMax M2.5 (Thinking)", "org": "MiniMax", "overall": 0.063, "overall_std": 0.010, "interpersonal": 0.086, "interpersonal_std": 0.021, "thought": 0.052, "thought_std": 0.013, "behavior": 0.052, "behavior_std": 0.013 },
 
