@@ -103,7 +103,7 @@ past/                        ← 暂不需要的旧文件（图片、node_module
 - 含 `thinking` / `(xhigh)` / `(high)` / `(medium)` / `(low)` → High Reasoning
 - 其他 → Low/No Reasoning
 
-命名时建议加档位后缀，例如：`"Kimi K2.5 (High)"`、`"Seed 2.0 Pro (Medium)"`、`"HY3 Preview (NoThink)"`。
+命名时建议加档位后缀，例如：`"Kimi K2.5 (High)"`、`"Seed 2.0 Pro (Medium)"`、`"Hy3 Preview (NoThink)"`。
 
 ### 2.2 Pass-Score 曲线（可选，只和 Life 页面相关）
 
